@@ -36,9 +36,7 @@ struct ImageStore {
             throw NSError(description: "The image path could not be retrieved")
         }
         
-        do {
-            try imageData.write(to: imagePath)
-        }
+        try imageData.write(to: imagePath)
     }
     
     private static func path(for imageName: String, fileExtension: String = "png") -> URL? {
