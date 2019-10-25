@@ -25,8 +25,8 @@ class ImageStoreTests: XCTestCase {
         try? ImageStore.store(image: imageToStore, name: imageName)
         let retrievedImage = ImageStore.retrieve(imageNamed: imageName)!
 
-        let retrievedImageData = UIImagePNGRepresentation(retrievedImage)!
-        let expectedImageData = UIImagePNGRepresentation(imageToStore)!
+        let retrievedImageData = retrievedImage.pngData()!
+        let expectedImageData = imageToStore.pngData()!
 
         XCTAssertEqual(expectedImageData, retrievedImageData)
 

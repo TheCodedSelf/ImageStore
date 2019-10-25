@@ -28,7 +28,7 @@ struct ImageStore {
     
     static func store(image: UIImage, name: String) throws {
         
-        guard let imageData = UIImagePNGRepresentation(image) else {
+        guard let imageData = image.pngData() else {
             throw NSError(description: "The image could not be created")
         }
         
